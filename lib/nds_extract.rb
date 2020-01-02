@@ -109,9 +109,10 @@ def movies_with_directors_set(source)
     new_hash[:title]=source[row_index][:movies][colunm_index][:title]
       new_hash[:title]=source[row_index][:movies][colunm_index][:title]
       
+      row_index += 1
   end
     
-    new_array << 
+    new_array 
     
   end
       
