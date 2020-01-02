@@ -112,7 +112,7 @@ def movies_with_directors_set(source)
     
     new_hash[:title]=source[row_index][:movies][colunm_index][:title]
       new_hash[:title]=source[row_index][:movies][colunm_index][:title]
-      new_array<< movies_with_director_key(name, movies_collection)
+      new_array<< movies_with_director_key(, movies_collection)
       row_index += 1
   end
     
