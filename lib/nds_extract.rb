@@ -100,12 +100,12 @@ def gross_per_studio(collection)
 def movies_with_directors_set(source)
   
   
-  new_hash={}
+  
   new_array=[]
-  secound_new_array=[]
+  
   row_index=0 
  while row_index<source.length  do
-   colunm_index=0 
+   #colunm_index=0 
    while colunm_index<source[row_index][:movies].length
    
     if !new_hash[source[row_index][:name]]
