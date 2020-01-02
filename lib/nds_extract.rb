@@ -107,7 +107,8 @@ def movies_with_directors_set(source)
   row_index=0
   
  while row_index<source.length  do
-   binding.pry
+  
+  #binding.pry
     director_name = source[row_index][:name]
       movies_collection = source[row_index][:movies]
 
