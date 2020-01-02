@@ -1,6 +1,7 @@
 # Provided, don't edit
 require 'directors_database'
 require "pp"
+require "pry"
 puts pp directors_database
 
 # A method we're giving you. This "flattens"  Arrays of Arrays so: [[1,2],
@@ -103,8 +104,10 @@ def movies_with_directors_set(source)
   
   new_array=[]
   
-  row_index=0 
+  row_index=0
+  
  while row_index<source.length  do
+   binding.pry
     new_hash[:director_name]=source[row_index][:name]
     new_hash[:title]=source[row_index][:movies][colunm_index][:title]
       new_hash[:title]=source[row_index][:movies][colunm_index][:title]
