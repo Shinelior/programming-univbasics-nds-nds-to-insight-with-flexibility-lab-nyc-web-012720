@@ -42,11 +42,11 @@ def movies_with_director_key(name, movies_collection)
  row_index=0 
 #name_array=flatten_a_o_a(aoa)
  while row_index<movies_collection.length
-      new_hash=movie_with_director_name(name, movies_collection[row_index])
+      new_array=movie_with_director_name(name, movies_collection[row_index])
   
   row_index+=1
 end
-new_array<< new_hash
+#new_array<< new_hash
 return new_array
   # GOAL: For each Hash in an Array (movies_collection), provide a collection
   # of movies and a directors name to the movie_with_director_name method
