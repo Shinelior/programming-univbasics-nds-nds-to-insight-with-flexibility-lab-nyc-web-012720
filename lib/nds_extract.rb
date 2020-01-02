@@ -43,7 +43,7 @@ def movies_with_director_key(name, movies_collection)
 #name_array=flatten_a_o_a(aoa)
  while row_index<movies_collection.length
       new_array=movie_with_director_name(name, movies_collection[row_index])
-      new_array
+      
   puts new_array
   row_index+=1
 end
