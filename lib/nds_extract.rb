@@ -109,7 +109,7 @@ def movies_with_directors_set(source)
  while row_index<source.length  do
    binding.pry
     director_name=source[row_index][:name]
-    
+    source[row_index][:movies]
     new_hash[:title]=source[row_index][:movies][colunm_index][:title]
       new_hash[:title]=source[row_index][:movies][colunm_index][:title]
       new_array<< movies_with_director_key( director_name, movies_collection)
