@@ -108,6 +108,7 @@ def movies_with_directors_set(source)
   
  while row_index<source.length  do
    binding.pry
+    director_namee=
     new_hash[:director_name]=source[row_index][:name]
     new_hash[:title]=source[row_index][:movies][colunm_index][:title]
       new_hash[:title]=source[row_index][:movies][colunm_index][:title]
