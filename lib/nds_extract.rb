@@ -1,5 +1,7 @@
 # Provided, don't edit
 require 'directors_database'
+require "pp"
+puts pp directors_database
 
 # A method we're giving you. This "flattens"  Arrays of Arrays so: [[1,2],
 # [3,4,5], [6]] => [1,2,3,4,5,6].
@@ -34,6 +36,18 @@ end
 # Your code after this point
 
 def movies_with_director_key(name, movies_collection)
+  name_array=[]
+  new_array=[]
+  new_hash={}
+ row_index=0 
+#name_array=flatten_a_o_a(aoa)
+ while row_index<movies_collection.length
+      new_hash=movie_with_director_name(name, movies_collection[row_index])
+  
+  row_index+=1
+end
+new_array<< new_hash
+return new_array
   # GOAL: For each Hash in an Array (movies_collection), provide a collection
   # of movies and a directors name to the movie_with_director_name method
   # and accumulate the returned Array of movies into a new Array that's
@@ -52,6 +66,23 @@ end
 
 
 def gross_per_studio(collection)
+  new_hash={}
+ row_index=0 
+  while row_index<collection.length
+       if !new_hash[collection[row_index][:studio]]
+         
+         new_hash[collection[row_index][:studio]]=collection[row_index][:worldwide_gross]
+       else 
+         new_hash[collection[row_index][:studio]]+=collection[row_index][:worldwide_gross]
+         
+       end 
+       
+        row_index+=1  
+        
+      end
+      return new_hash 
+    end
+         
   # GOAL: Given an Array of Hashes where each Hash represents a movie,
   # return a Hash that includes the total worldwide_gross of all the movies from
   # each studio.
@@ -63,9 +94,36 @@ def gross_per_studio(collection)
   #
   # Hash whose keys are the studio names and whose values are the sum
   # total of all the worldwide_gross numbers for every movie in the input Hash
-end
+
 
 def movies_with_directors_set(source)
+  
+  
+  new_hash={}
+  new_array=[]
+  secound_new_array=[]
+  row_index=0 
+ while row_index<source.length  do
+   colunm_index=0 
+   while colunm_index<source[row_index][:movies].length
+   
+    if !new_hash[source[row_index][:name]]
+    #d_name=source[row_index][:name]
+    new_hash[:director_name]=source[row_index][:name]
+    new_hash[:title]=source[row_index][:movies][colunm_index][:title]
+    else
+      new_hash[:title]=source[row_index][:movies][colunm_index][:title]
+      
+    end
+    colunm_index+=1 
+   
+  end
+    
+    new_array << new_hash
+    row_index+=1
+  end
+      secound_new_array << new_array
+      
   # GOAL: For each director, find their :movies Array and stick it in a new Array
   #
   # INPUT:
